@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('email');
             $table->string('name');
-            $table->string('join_id');
+            $table->string('join_id')->unique();
             $table->string('department');
             $table->timestamps();
         });

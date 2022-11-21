@@ -1,5 +1,7 @@
 <?php
 
+
+
 return [
 
     /*
@@ -44,6 +46,10 @@ return [
             'driver' => 'session',
             'provider' => 'students',
         ],
+        'teacher_login' => [
+            'driver' => 'session',
+            'provider' => 'teachers',
+        ],
     ],
 
     /*
@@ -72,6 +78,10 @@ return [
         'students' => [
             'driver' => 'eloquent',
             'model' => App\Models\Student::class,
+        ],
+        'teachers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Teacher::class,
         ],
     ],
 

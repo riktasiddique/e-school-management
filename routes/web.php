@@ -36,6 +36,7 @@ Route::controller(StudentController::class)->group(function(){
 });
 Route::controller(TeacherController::class)->group(function(){
     Route::get('teacher-login', 'index')->name('teacher.login')->middleware(['guest:student_login']);
+    Route::post('teacher-login', 'userLoginCheck')->name('teacher.login');
 });
 // Teacher Controllers
 Route::controller(UploadStudentController::class)->group(function(){

@@ -83,7 +83,7 @@
                     </div>
                     <div class="hpanel">
                         <div class="panel-body">
-                            <form method="POST" action="">
+                            <form method="POST" action="{{route('teacher.login')}}">
                                 @csrf
                                 <div class="form-group">
                                     <label class="control-label" for="username">Email</label>
@@ -95,7 +95,7 @@
                                     <span class="help-block small">Your unique username to app</span>
                                 </div>
                                 <button type="submit" class="btn btn-success btn-block loginbtn">Login</button>
-                                <a class="btn btn-default btn-block" href="">Register</a>
+                                {{-- <a class="btn btn-default btn-block" href="">Register</a> --}}
                             </form>
                         </div>
                     </div>

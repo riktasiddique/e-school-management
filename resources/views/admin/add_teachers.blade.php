@@ -68,7 +68,7 @@
     </div>
     <div class="row justify-content-center mt-5">
       <div class="col-md-4">
-        <h3  class="main-heading text-center">Student List</h3>
+        <h3  class="main-heading text-center">Teachers List</h3>
         <table class="table table-bordered mt-5">
               <thead>
                 <tr>
