@@ -21,5 +21,8 @@ use App\Http\Controllers\Admin\DashboardController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/admin-panel',[ DashboardController::class, 'index']);
+Route::controller(DashboardController::class)->group(function(){
+    Route::get('/admin-panel', 'index');
+    Route::get('/add-teacher', 'addTeacher')->name('admin.add-teacher');
+    Route::post('/add-teacher', 'addTeacherStore')->name('admin.add-teacher');
+});
