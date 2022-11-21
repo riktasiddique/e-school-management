@@ -124,7 +124,7 @@
                 </div>
 
                 <!-- item-->
-                <a href="{{route('user.profile')}}" class="dropdown-item notify-item">
+                <a href="" class="dropdown-item notify-item">
                     <i class="mdi mdi-account-circle me-1"></i>
                     <span>My Account</span>
                     {{-- <a href="{{route('user.profile')}}">My Account</a> --}}
@@ -150,13 +150,11 @@
 
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    {{-- <i class="mdi mdi-logout me-1"></i>
-                    <span>Logout</span> --}}
-                    <form method="POST" action="{{ route('logout') }}">
+                    {{-- <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <i class="mdi mdi-logout me-1"></i>
                         <span href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">Logout</span>
-                    </form>
+                    </form> --}}
                 </a>
             </div>
         </li>

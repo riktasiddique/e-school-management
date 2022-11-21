@@ -3,16 +3,17 @@
     <li class="side-nav-item">
         <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
             <i class="uil-home-alt"></i>
-            <span class="badge bg-success float-end">4</span>
-            <span> Home </span>
+            {{-- <span class="badge bg-success float-end">4</span> --}}
+            <span>Front Page </span>
+            {{-- <a href="/"><span> Home </span></a> --}}
         </a>
         <div class="collapse" id="sidebarDashboards">
             <ul class="side-nav-second-level">
                 <li>
-                    <a href="dashboard-analytics.html">Analytics</a>
+                    <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="dashboard-crm.html">CRM</a>
+                    <a href="">Add Teachers</a>
                 </li>
             </ul>
         </div>
@@ -25,7 +26,7 @@
         <div class="collapse" id="sidebarEmail">
             <ul class="side-nav-second-level">
                 <li>
-                    <a href="{{route('users.index')}}">All User</a>
+                    <a href="">All User</a>
                 </li>
                 <li>
                     <a href="apps-email-read.html">Read Email</a>

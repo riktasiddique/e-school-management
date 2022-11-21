@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Login | Nalika - Material Admin Template</title>
+    <title>Student Login | {{config('app.name')}}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{-- Bootstrap 5 cdn --}}
@@ -83,23 +83,18 @@
                     </div>
                     <div class="hpanel">
                         <div class="panel-body">
-                            <form method="POST" action="">
+                          <h3 class="text-center">Log in</h3>
+                            <form method="POST" action="{{route('student.login')}}">
                                 @csrf
-                                <div class="form-group">
+                                <div class="form-group mt-5">
                                     <label class="control-label" for="username">Username</label>
-                                    <input type="text" placeholder="Enter Email" title="Please enter you username" required="" value="" name="email" id="username" class="form-control">
-                                    <span class="help-block small">Your unique username to app</span>
+                                    <input type="text" placeholder="Enter Name" title="Please enter you username" required="" value="" name="userName" id="username" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label" for="password">Password</label>
-                                    <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="password" id="password" class="form-control">
-                                    <span class="help-block small">Yur strong password</span>
+                                    <label class="control-label" for="password">Batch Id</label>
+                                    <input type="text" title="batch_id" placeholder="Enter Batch Id" required="" value="" name="batch_id" id="batch_id" class="form-control">
                                 </div>
-                                {{-- <div class="checkbox login-checkbox p-2">
-                                    <label><input type="checkbox" class="i-checks"> Remember me </label>
-                                </div> --}}
-                                <button type="submit" class="btn btn-success btn-block loginbtn">Login</button>
-                                <a class="btn btn-default btn-block" href="">Register</a>
+                                <button type="submit" class="btn btn-success btn-block loginbtn mt-5">Login</button>
                             </form>
                         </div>
                     </div>

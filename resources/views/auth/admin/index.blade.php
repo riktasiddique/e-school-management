@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Login | Nalika - Material Admin Template</title>
+    <title>Admin Login | {{config('app.name')}}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{-- Bootstrap 5 cdn --}}
@@ -99,7 +99,7 @@
                                     <label><input type="checkbox" class="i-checks"> Remember me </label>
                                 </div> --}}
                                 <button type="submit" class="btn btn-success btn-block loginbtn">Login</button>
-                                <a class="btn btn-default btn-block" href="">Register</a>
+                                <!-- <a class="btn btn-default btn-block" href="">Register</a> -->
                             </form>
                         </div>
                     </div>
