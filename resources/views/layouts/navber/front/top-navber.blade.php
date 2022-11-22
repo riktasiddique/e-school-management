@@ -24,18 +24,18 @@
             <li class="nav-item">
               <a class="nav-link" href="">Contact Us</a>
             </li>
-            @auth
+            @if (!(Auth::guard('student')->check() || Auth::guard('teacher')->check()))
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('login')}}">Login</a>
+              </li>
+            @else
               <li class="nav-item">
                 <a class="nav-link" href="">Profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="">Logout</a>
+                <a class="nav-link" href="">Log Out</a>
               </li>
-              @else
-                  <li class="nav-item">
-                    <a class="nav-link" href="">Login</a>
-                  </li>
-            @endauth
+            @endif
           </ul>
         </div>
       </nav>

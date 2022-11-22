@@ -27,12 +27,11 @@ class StudentController extends Controller
             ->first();
 
         if ($studentCredentials) {
-            Auth::guard('student_login')->login( $studentCredentials );
+            Auth::guard('student')->login( $studentCredentials );
             return redirect( '/' );
             // return $studentCredentials;
         }
-
-        return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
+        return back()->with('error', 'Please Enter Valid Credentials!');
     }
 
 }

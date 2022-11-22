@@ -80,6 +80,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
                 <div class="col-md-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="text-center m-b-md custom-login">
+                      @include('validation-msg.error-success-massage')
                     </div>
                     <div class="hpanel">
                         <div class="panel-body">

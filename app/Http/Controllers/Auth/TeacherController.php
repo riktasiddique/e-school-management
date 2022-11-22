@@ -24,10 +24,9 @@ class TeacherController extends Controller
             ->first();
 
         if ($teacherCredentials) {
-            Auth::guard('teacher_login')->login( $teacherCredentials );
+            Auth::guard('teacher')->login( $teacherCredentials );
             return redirect( '/' );
         }
-
-        return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
+        return back()->with('error', 'Please Enter Valid Credentials!');
     }
 }

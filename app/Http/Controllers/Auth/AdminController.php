@@ -22,8 +22,10 @@ class AdminController extends Controller
 
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('/')->withSuccess('You have Successfully loggedin');
+            // return redirect()->intended('/')->withSuccess('You have Successfully loggedin');
+            return redirect()->route('admin.admin-panel');
         }
+        return back()->with('error', 'Please Enter Valid Credentials!');
 
     }
 }

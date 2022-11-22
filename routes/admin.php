@@ -21,8 +21,9 @@ use App\Http\Controllers\Admin\DashboardController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::controller(DashboardController::class)->group(function(){
-    Route::get('/admin-panel', 'index');
+Route::controller(DashboardController::class)->middleware('auth')->group(function(){
+    Route::redirect('/home', '/admin-panel', 301 );
+    Route::get('/admin-panel', 'index')->name('admin.admin-panel');
     Route::get('/add-teacher', 'addTeacher')->name('admin.add-teacher');
     Route::post('/add-teacher', 'addTeacherStore')->name('admin.add-teacher');
 });
