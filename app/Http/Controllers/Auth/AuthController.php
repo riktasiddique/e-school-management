@@ -15,4 +15,10 @@ class AuthController extends Controller
         }
         return back();
     }
+    public function logout() {
+        Auth::logout();
+        Auth::guard('student')->logout();
+        Auth::guard('teacher')->logout();
+        return redirect( '/login-panel' );
+    }
 }

@@ -42,3 +42,4 @@ Route::controller(UploadStudentController::class)->group(function(){
     Route::post('add-student', 'addStudentStore')->name('teacher.add-student');
     Route::get('student-list', 'studentList')->name('teacher.student-list');
 });
+Route::get('/logout',[ AuthController::class, 'logout'])->name('logout');

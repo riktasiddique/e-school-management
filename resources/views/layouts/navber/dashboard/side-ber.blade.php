@@ -10,9 +10,6 @@
         <div class="collapse" id="sidebarDashboards">
             <ul class="side-nav-second-level">
                 <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
                     <a href="">Add Teachers</a>
                 </li>
             </ul>
