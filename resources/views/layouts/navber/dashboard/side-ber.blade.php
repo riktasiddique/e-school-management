@@ -10,7 +10,13 @@
         <div class="collapse" id="sidebarDashboards">
             <ul class="side-nav-second-level">
                 <li>
-                    <a href="">Add Teachers</a>
+                    <a href="{{route('department.index')}}"><strong>+</strong> Add Department</a>
+                </li>
+                <li>
+                    <a href="{{route('subject.index')}}"><strong>+</strong> Add Subject</a>
+                </li>
+                <li>
+                    <a href="{{route('admin.add-teacher')}}"><strong>+</strong> Add Teachers</a>
                 </li>
             </ul>
         </div>

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\DepartmentController;
+use App\Http\Controllers\Admin\SubjectController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\AdminController;
@@ -21,9 +23,14 @@ use App\Http\Controllers\Admin\DashboardController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::controller(DashboardController::class)->middleware('auth')->group(function(){
-    Route::redirect('/home', '/admin-panel', 301 );
-    Route::get('/admin-panel', 'index')->name('admin.admin-panel');
-    Route::get('/add-teacher', 'addTeacher')->name('admin.add-teacher');
-    Route::post('/add-teacher', 'addTeacherStore')->name('admin.add-teacher');
+Route::prefix('/')->controller(DashboardController::class)->middleware('auth')->group(function(){
+    Route::redirect('/home', 'admin-panel', 301 );
+    Route::get('admin-panel', 'index')->name('admin.admin-panel');
+    Route::get('add-teacher', 'addTeacher')->name('admin.add-teacher');
+    Route::post('add-teacher', 'addTeacherStore')->name('admin.add-teacher');
+});
+Route::prefix('/admin-panel')->middleware(['auth'])->group(function () {
+    Route::resource('department', DepartmentController::class);
+    Route::resource('subject', SubjectController::class);
+
 });

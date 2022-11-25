@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     public function home(){
-        if(!(Auth::guard('student')->check() || Auth::guard('teacher')->check())){
-            return redirect()->route('login');
-        }
+        // if(!(Auth::guard('student')->check() || Auth::guard('teacher')->check())){
+        //     return redirect()->route('login');
+        // }
         return view('layouts.front-layout.app');
         
     }

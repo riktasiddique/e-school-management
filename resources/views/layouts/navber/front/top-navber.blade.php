@@ -24,7 +24,7 @@
             <li class="nav-item">
               <a class="nav-link" href="">Contact Us</a>
             </li>
-            @if (!(Auth::guard('student')->check() || Auth::guard('teacher')->check()))
+            @if (!(Auth::guard('student')->check() || Auth::guard('teacher')->check()) && (!Auth::check()))
               <li class="nav-item">
                 <a class="nav-link" href="{{route('login')}}">Login</a>
               </li>

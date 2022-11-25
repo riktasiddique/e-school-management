@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
         <meta content="Coderthemes" name="author">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{asset('admin/images/favicon.ico')}}">
 
@@ -49,8 +50,8 @@
                     <!-- end Topbar -->
                     {{-- Success massage --}}
                     @if ($message = Session::get('success'))
-                        <div class="row justify-content-center">
-                            <div class="col-md-5">
+                        <div class="row justify-content-center mt-2">
+                            <div class="col-md-6">
                                 <div class="alert alert-success alert-block">
                                     <h5 class="text-center"><strong>{{ $message }}</strong></h5>
                                 </div>
@@ -59,8 +60,8 @@
                     @endif
                      {{-- Error massage --}}
                     @if ($message = Session::get('error'))
-                     <div class="row justify-content-center">
-                         <div class="col-md-5">
+                     <div class="row justify-content-center mt-2">
+                         <div class="col-md-6">
                              <div class="alert alert-danger alert-block">
                                  <h5 class="text-center"><strong>{{ $message }}</strong></h5>
                              </div>
@@ -69,8 +70,8 @@
                     @endif
                     {{-- Any error --}}
                     @if ($errors->any())
-                        <div class="row justify-content-center">
-                            <div class="col-md-5">
+                        <div class="row justify-content-center mt-2">
+                            <div class="col-md-6">
                                 <div class="alert alert-danger">
                                     <ul>
                                         @foreach ($errors->all() as $error)
