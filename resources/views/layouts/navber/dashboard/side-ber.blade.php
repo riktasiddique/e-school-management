@@ -10,6 +10,9 @@
         <div class="collapse" id="sidebarDashboards">
             <ul class="side-nav-second-level">
                 <li>
+                    <a href="/">Home Page</a>
+                </li>
+                <li>
                     <a href="{{route('department.index')}}"><strong>+</strong> Add Department</a>
                 </li>
                 <li>

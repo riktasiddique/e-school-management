@@ -16,7 +16,7 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        $departments = Department::all();
+        $departments = Department::paginate(10);
         return view('admin.department.index', compact('departments'));
     }
     /**
@@ -39,12 +39,13 @@ class DepartmentController extends Controller
     {
         $request->validate([
             'department' => 'required',
+            'code'       => 'required',
         ]);
-       $user = auth()->user();
+    //    $user = auth()->user();
 
        $department = new Department();
        $department->name = $request->department;
-       $department->user_id = $user->id;
+       $department->code = $request->code;
        $department->save();
        return back()->with('success', 'Added New Department Successfully!');
     }
@@ -82,12 +83,13 @@ class DepartmentController extends Controller
     {
         $request->validate([
             'department' => 'required',
+            'code'       => 'required',
         ]);
        $user = auth()->user();
 
        $department = Department::find($id);
        $department->name = $request->department;
-       $department->user_id = $user->id;
+       $department->code = $request->code;
        $department->save();
        return back()->with('success', 'Updated Department Successfully!');
     }
@@ -103,5 +105,43 @@ class DepartmentController extends Controller
         $department = Department::find($id);
         $department->delete();
         return back()->with('error', 'Department Deleted Succussfuly!');
+    }
+    public function storeCsv(Request $request){
+        $request->validate([
+            'csvFile' => 'required',
+        ]);
+        $csvFile = $request->csvFile;
+        
+        $csvFile = fopen($csvFile, 'r');
+        $csv = [];
+
+        while(($line = fgetcsv($csvFile)) !== FALSE){
+            $csv[] = $line;
+        }
+        fclose($csvFile);
+        $data = [];
+        // dd($csv[0]);
+        foreach($csv as $row_num => $row){
+            // return $$row_num[0];
+            if($row_num == 0){
+                continue;
+            }
+            $data[] = [
+                'name'         => $row[0],
+                'code'          => $row[1],
+            ];
+        }
+        Department::upsert(
+            $data,
+            [
+                'code',
+            ],
+            [
+                
+                'name',
+            ]
+
+        );
+        return back()->with('success',' Uploaded Department File Successfuly!');
     }
 }

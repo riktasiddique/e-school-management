@@ -24,6 +24,11 @@
             <li class="nav-item">
               <a class="nav-link" href="">Contact Us</a>
             </li>
+            @auth
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('admin.admin-panel')}}">Admin Panel</a>
+            </li>
+            @endauth
             @if (!(Auth::guard('student')->check() || Auth::guard('teacher')->check()) && (!Auth::check()))
               <li class="nav-item">
                 <a class="nav-link" href="{{route('login')}}">Login</a>

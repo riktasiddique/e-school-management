@@ -32,5 +32,7 @@ Route::prefix('/')->controller(DashboardController::class)->middleware('auth')->
 Route::prefix('/admin-panel')->middleware(['auth'])->group(function () {
     Route::resource('department', DepartmentController::class);
     Route::resource('subject', SubjectController::class);
+    Route::post('subject/csv',[ SubjectController::class, 'storeCsv'])->name('subject.storeCsv');
+    Route::post('department/csv',[ DepartmentController::class, 'storeCsv'])->name('department.storeCsv');
 
 });

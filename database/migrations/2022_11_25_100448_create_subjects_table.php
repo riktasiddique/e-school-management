@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('subjects', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('department_id');
-            $table->unsignedBigInteger('user_id');
+            $table->string('department_code');
+            // $table->unsignedBigInteger('user_id');
             $table->string('course_title');
-            $table->string('course_code');
+            $table->string('course_code')->unique();
             $table->timestamps();
         });
     }
