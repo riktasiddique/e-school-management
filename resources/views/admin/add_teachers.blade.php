@@ -81,10 +81,11 @@
               <tbody>
                 @foreach ($teachers as $teacher)
                   <tr>
-                    <th scope="row">{{$teacher->join_id}}</th>
+                    <th scope="row">{{$teacher->teacher_id}}</th>
                     <td>{{$teacher->name}}</td>
                     <td>{{$teacher->email}}</td>
-                    <td>{{$teacher->department}}</td>
+                    {{-- {{dd($teacher->department->name)}} --}}
+                    <td>{{$teacher->department->name ?? 'none'}}</td>
                     {{-- <td>{{$teacher->section}}</td> --}}
                   </tr>
                 @endforeach

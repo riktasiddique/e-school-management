@@ -16,8 +16,13 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('batch_id')->unique();
-            $table->string('section');
+            $table->string('email')->unique();
+            $table->string('date_of_birth');
+            $table->string('sub_1')->nullable();
+            $table->string('sub_2')->nullable();
+            $table->string('sub_3')->nullable();
+            $table->string('sub_4')->nullable();
+            $table->string('student_id')->unique();
             $table->timestamps();
         });
     }

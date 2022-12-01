@@ -14,9 +14,6 @@ class UploadStudentController extends Controller
         $students = Student::paginate(10);
         return view('teacher.add_student', compact('students'));
     }
-    public function studentList(){
-        return view('teacher.student-list');
-    }
     public function addStudentStore(Request $request){
         // return $request->all();
         $validated = $request->validate([
@@ -24,7 +21,7 @@ class UploadStudentController extends Controller
         ]);
         $user_id = auth()->id();
         $csvFile = $request->file('csvFile');
-        $path_1  = $csvFile? Storage::url($request->file('csvFile')->store('/student'. $user_id)) : '';
+        // $path_1  = $csvFile? Storage::url($request->file('csvFile')->store('/student'. $user_id)) : '';
         $studentFile = fopen($csvFile, 'r');
         $csv = [];
         while (  ( $line = fgetcsv( $studentFile ) ) !== FALSE ) {
@@ -39,20 +36,31 @@ class UploadStudentController extends Controller
                 continue;
             }
             $data[] =[
-                'name'          => $row[0],
-                'batch_id'      => $row[1],
-                'section'       => $row[2],
+                
+                'name'               => $row[0],
+                'email'              => $row[1],
+                'date_of_birth'      => $row[2],
+                'sub_1'              => $row[3],
+                'sub_2'              => $row[4],
+                'sub_3'              => $row[5],
+                'sub_4'              => $row[6],
+                'student_id'       => $row[7],
             ];
         }
         Student::upsert(
             $data,
             [
-                'batch_id',
+                'student_id',
             ],
             [
-                
+
+                'email',
                 'name',
-                'section'
+                'date_of_birth',
+                'sub_1',
+                'sub_2',
+                'sub_3',
+                'sub_4',
             ]
 
         );

@@ -38,23 +38,25 @@ class DashboardController extends Controller
                 continue;
             }
             $data[] = [
-                'name'            => $row[0],
-                'department'      => $row[1],
-                'email'           => $row[2],
-                'join_id'         => $row[3],
+                'name'               => $row[0],
+                'email'              => $row[1],
+                'teacher_id'         => $row[2],
+                'date_of_birth'      => $row[3],
+                'department_code'    => $row[4],
 
             ];
         }
         Teacher::upsert(
             $data,
             [
-                'join_id',
+                'teacher_id',
             ],
             [
                 
-                'department',
+                'name',
                 'email',
-                'name'
+                'date_of_birth',
+                'department_code',
             ]
 
         );

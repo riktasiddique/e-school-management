@@ -56,7 +56,7 @@
               </h2>
               <div class="row justify-content-center mt-5">
                 <div class="col-md-4">
-                    <form action="{{route('teacher.add-student')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('admin.add-student')}}" method="post" enctype="multipart/form-data">
                       @csrf
                         <label for="student-file"></label>
                         <input id="student-file" type="file" name="csvFile" id="" accept=".csv">
@@ -74,15 +74,15 @@
                 <tr>
                   <th scope="col">ID</th>
                   <th scope="col">Path</th>
-                  <th scope="col">Section</th>
+                  <th scope="col">Email</th>
                 </tr>
               </thead>
               <tbody>
                 @foreach ($students as $student)
                   <tr>
-                    <th scope="row">{{$student->batch_id}}</th>
+                    <th scope="row">{{$student->student_id}}</th>
                     <td>{{$student->name}}</td>
-                    <td>{{$student->section}}</td>
+                    <td>{{$student->email }}</td>
                   </tr>
                 @endforeach
               </tbody>

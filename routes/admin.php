@@ -34,5 +34,9 @@ Route::prefix('/admin-panel')->middleware(['auth'])->group(function () {
     Route::resource('subject', SubjectController::class);
     Route::post('subject/csv',[ SubjectController::class, 'storeCsv'])->name('subject.storeCsv');
     Route::post('department/csv',[ DepartmentController::class, 'storeCsv'])->name('department.storeCsv');
-
+    
+    Route::controller(UploadStudentController::class)->group(function(){
+        Route::get('add-student', 'addStudent')->name('admin.add-student');
+        Route::post('add-student', 'addStudentStore')->name('admin.add-student');
+    });
 });

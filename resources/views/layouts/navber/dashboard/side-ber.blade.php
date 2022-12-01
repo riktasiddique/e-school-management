@@ -21,6 +21,9 @@
                 <li>
                     <a href="{{route('admin.add-teacher')}}"><strong>+</strong> Add Teachers</a>
                 </li>
+                <li>
+                    <a href="{{route('admin.add-student')}}"><strong>+</strong> Add Srudent</a>
+                </li>
             </ul>
         </div>
     </li>
