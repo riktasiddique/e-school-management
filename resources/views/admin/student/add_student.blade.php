@@ -73,8 +73,10 @@
               <thead>
                 <tr>
                   <th scope="col">ID</th>
-                  <th scope="col">Path</th>
-                  <th scope="col">Email</th>
+                  <th scope="col">Name</th>
+                  {{-- <th scope="col">Email</th> --}}
+                  <th scope="col">View</th>
+                  <th scope="col">Update</th>
                 </tr>
               </thead>
               <tbody>
@@ -82,7 +84,13 @@
                   <tr>
                     <th scope="row">{{$student->student_id}}</th>
                     <td>{{$student->name}}</td>
-                    <td>{{$student->email }}</td>
+                    {{-- <td>{{$student->email }}</td> --}}
+                    <td>
+                      <a class="btn btn-info text-white" href="{{route('admin.subject-view', $student->id)}}">View</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-warning text-white" href="">Edit</a>
+                </td>
                   </tr>
                 @endforeach
               </tbody>
@@ -101,8 +109,6 @@
   <script type="text/javascript" src="{{asset('front-end/js/jquery-3.4.1.min.js')}}"></script>
   <script type="text/javascript" src="{{asset('front-end/js/bootstrap.js')}}"></script>
   <!-- progreesbar script -->
-
-  </script>
   <script>
     // This example adds a marker to indicate the position of Bondi Beach in Sydney,
     // Australia.
