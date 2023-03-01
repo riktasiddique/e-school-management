@@ -5,9 +5,9 @@
    <div class="row justify-content-start mt-2">
     <div class="col-md-4">
          <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-           <strong>+</strong> New subject
-        </button> 
+         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+             <strong>+</strong> New subject
+         </button> 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">

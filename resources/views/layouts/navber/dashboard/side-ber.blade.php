@@ -21,9 +21,11 @@
                 <li>
                     <a href="{{route('admin.add-teacher')}}"><strong>+</strong> Add Teachers</a>
                 </li>
-                <li>
-                    <a href="{{route('admin.add-student')}}"><strong>+</strong> Add Srudent</a>
-                </li>
+                @if (Auth::guard('teacher')->check())    
+                    <li>
+                        <a href="{{route('admin.add-student')}}"><strong>+</strong> Add Srudent</a>
+                    </li>
+                @endif
             </ul>
         </div>
     </li>

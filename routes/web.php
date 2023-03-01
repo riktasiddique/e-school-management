@@ -36,4 +36,4 @@ Route::controller(TeacherController::class)->group(function(){
     Route::get('teacher-login', 'index')->name('teacher.login')->middleware(['guest:teacher']);
     Route::post('teacher-login', 'userLoginCheck')->name('teacher.login');
 });
-Route::get('/logout',[ AuthController::class, 'logout'])->name('logout');
+Route::post('/logout',[ AuthController::class, 'logout'])->name('logout');

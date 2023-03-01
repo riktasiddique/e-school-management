@@ -121,6 +121,13 @@
                     <i class="mdi mdi-account-circle me-1"></i>
                     <span>My Account</span>
                 </a>
+                <form action="{{ route('logout') }}" method="post">
+                    @csrf
+                    <button href="" class="dropdown-item notify-item">
+                        <i class="mdi mdi-account-circle me-1"></i>
+                        <span>Logout</span>
+                    </button>
+                </form>
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                 </a>
             </div>
