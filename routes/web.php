@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\AdminController;
+use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\Auth\StudentController;
 use App\Http\Controllers\Auth\TeacherController;
 use App\Http\Controllers\Teacher\UploadStudentController;
@@ -35,5 +36,10 @@ Route::controller(StudentController::class)->group(function(){
 Route::controller(TeacherController::class)->group(function(){
     Route::get('teacher-login', 'index')->name('teacher.login')->middleware(['guest:teacher']);
     Route::post('teacher-login', 'userLoginCheck')->name('teacher.login');
+});
+Route::controller(ProfileController::class)->group(function(){
+    // Route::get('profile', 'index')->name('profile')->middleware(['auth:teacher', 'auth:student', 'auth']);
+    Route::get('profile', 'index')->name('profile');
+    // Route::post('teacher-login', 'userLoginCheck')->name('teacher.login');
 });
 Route::post('/logout',[ AuthController::class, 'logout'])->name('logout');
